@@ -1,4 +1,4 @@
-package com.fredericboisguerin.insa.calculateurprix;
+package com.anaisrabary.insa.calculateurprix;
 
 import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.SOUTH;
@@ -24,6 +24,11 @@ public class CalculateurPrixView extends JFrame {
         prixArticleLabel.setLabelFor(prixArticleTextField);
         prixArticleTextField.setToolTipText("Entrez ici le montant d'un article");
 
+        JLabel quantiteArtilcleLabel = new JLabel("Quantite : ");
+        JTextField quantiteArticleTextField = new JTextField(10);
+        prixArticleLabel.setLabelFor(quantiteArticleTextField);
+        prixArticleTextField.setToolTipText("Entrez ici la quantite d'un article");
+
         JLabel montantHTLabel = new JLabel("Montant HT : ");
         JFormattedTextField montantHTTextField = new JFormattedTextField(NumberFormat.getCurrencyInstance());
         montantHTTextField.setValue(15);
@@ -36,14 +41,19 @@ public class CalculateurPrixView extends JFrame {
         JPanel contentPane = new JPanel();
         setContentPane(contentPane);
         contentPane.add(prixArticleTextField);
+        contentPane.add(quantiteArticleTextField);
 
         JPanel labelPane = new JPanel(new GridLayout(0, 1));
         labelPane.add(prixArticleLabel);
+        labelPane.add(quantiteArtilcleLabel);
         labelPane.add(montantHTLabel);
+
 
         JPanel fieldPane = new JPanel(new GridLayout(0, 1));
         fieldPane.add(prixArticleTextField);
+        fieldPane.add(quantiteArticleTextField);
         fieldPane.add(montantHTTextField);
+
 
         contentPane.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         add(labelPane, WEST);
