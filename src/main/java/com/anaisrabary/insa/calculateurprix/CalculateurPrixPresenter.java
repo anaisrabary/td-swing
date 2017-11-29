@@ -7,7 +7,11 @@ public class CalculateurPrixPresenter {
         this.calculateurPrixView = calculateurPrixView;
     }
 
-    public void onComputeButtonClicked(String montantArticleAsText) {
-        calculateurPrixView.afficherErreur("Allez, au boulot ! :)");
+    public void onComputeButtonClicked(String montantArticleAsText, String quantiteArticleText) {
+        double montantArticleDouble = Double.parseDouble(montantArticleAsText);
+        double quantiteAtricleDouble = Double.parseDouble(quantiteArticleText);
+
+        calculateurPrixView.afficherResultat(montantArticleDouble*quantiteAtricleDouble);
+        //calculateurPrixView.afficherErreur("Allez, au boulot ! :)");
     }
 }
